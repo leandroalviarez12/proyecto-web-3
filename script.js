@@ -31,8 +31,12 @@ let moveInterval;
 const createBoard = () => {
     boardSquares.forEach( (row, rowIndex) => {
       row.forEach( (column, columnndex) => {
-        const squareValue = `$`
+        const squareValue = `{rowIndex}${columnndex}`;
         const squareElemnt = document.createElement('div');
+        squareElemnt.setAttribute('class', 'square emptySquare');
+        squareElemnt.setAttribute('id', squareValue);
+        board.appendChild(squareElemnt);
+        emptySquares.push(squareValue);
       } )
     })
 }
